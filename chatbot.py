@@ -11,8 +11,7 @@ import configparser
 import logging
 
 def main():
-    global gpt
-    gpt = ChatGPT(config)
+    global gpt 
     
     # Configure logging so you can see initialization and error messages
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -22,6 +21,8 @@ def main():
     logging.info('INIT: Loading configuration...')
     config = configparser.ConfigParser()
     config.read('config.ini')
+
+    gpt = ChatGPT(config)
 
     # Create an Application for your bot
     logging.info('INIT: Connecting the Telegram bot...')
